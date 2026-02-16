@@ -5,7 +5,7 @@ import React from "react";
 const AppLayout: LayoutComponent = () => {
   return (
     <React.Fragment>
-      <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+      <ThemeProvider defaultTheme="system" storageKey="summy-ui-theme">
         <Outlet />
       </ThemeProvider>
     </React.Fragment>

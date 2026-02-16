@@ -31,7 +31,7 @@ const InfoCard: FC<InfoCardProps> = ({ title, desc, link, linkText }) => (
 
 const Home: PageComponent = () => {
   return (
-    <section className="w-full bg-primary h-full flex flex-col items-center py-8 px-5 md:px-12 xl:px-48 mx-auto font-comfortaa relative">
+    <section className="w-full h-full flex flex-col items-center py-8 px-5 md:px-12 xl:px-48 mx-auto font-comfortaa relative">
       {/* === Header === */}
       <header className="flex justify-end items-center w-full mb-7">
         <div className="flex items-center gap-2">
