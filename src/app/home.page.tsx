@@ -1,9 +1,9 @@
-import { Link, PageComponent } from 'rasengan';
-import logo from '@/assets/logo.svg';
-import RasenganVector from '@/assets/RasenganVector.svg';
-import shadcnLogo from '@/assets/shadcnLogo.png';
-import Image from '@rasenganjs/image';
-import type { FC } from 'react';
+import logo from "@/assets/logo.svg";
+import RasenganVector from "@/assets/RasenganVector.svg";
+import shadcnLogo from "@/assets/shadcnLogo.png";
+import Image from "@rasenganjs/image";
+import { Link, PageComponent } from "rasengan";
+import type { FC } from "react";
 
 interface InfoCardProps {
   title: string;
@@ -31,7 +31,7 @@ const InfoCard: FC<InfoCardProps> = ({ title, desc, link, linkText }) => (
 
 const Home: PageComponent = () => {
   return (
-    <section className="w-full h-full bg-white flex flex-col items-center py-8 px-5 md:px-12 xl:px-48 mx-auto font-comfortaa relative">
+    <section className="w-full bg-primary h-full flex flex-col items-center py-8 px-5 md:px-12 xl:px-48 mx-auto font-comfortaa relative">
       {/* === Header === */}
       <header className="flex justify-end items-center w-full mb-7">
         <div className="flex items-center gap-2">
@@ -64,7 +64,7 @@ const Home: PageComponent = () => {
             Welcome to <span className="text-primary">Rasengan</span>
           </h1>
           <p className="text-sm mt-4 font-Lexend text-center">
-            To get started, edit the file{' '}
+            To get started, edit the file{" "}
             <code className="ml-1 font-azeret font-light italic">
               src/app/home.page.tsx
             </code>
@@ -133,10 +133,10 @@ const Home: PageComponent = () => {
   );
 };
 
-Home.path = '/';
+Home.path = "/";
 Home.metadata = {
-  title: 'Home',
-  description: 'Home page',
+  title: "Home",
+  description: "Home page",
 };
 
 export default Home;
