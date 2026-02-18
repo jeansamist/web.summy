@@ -1,6 +1,6 @@
 import { PageComponent } from "rasengan";
 const SignUpPage: PageComponent = () => {
-  return <main></main>;
+  return <main className="min-h-screen bg-accent"></main>;
 };
 
 SignUpPage.path = "/sign-up";
