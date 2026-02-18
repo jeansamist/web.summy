@@ -211,7 +211,7 @@ export const SelectField: FunctionComponent<SelectFieldProps> = ({
                     <SelectValue placeholder={placeholder} />
                   </SelectTrigger>
                 </FormControl>
-                <SelectContent className="max-w-[500px] w-full">
+                <SelectContent className="max-w-125 w-full">
                   {items.map((item, key) => (
                     <SelectItem key={key} value={item.value}>
                       {item.label}
