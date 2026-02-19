@@ -12,3 +12,9 @@ export interface AuthResponse {
   accessToken: string;
   expiresAt: Date | string;
 }
+
+export interface ServiceReturn<T = unknown> {
+  success: boolean;
+  data: T | null;
+  message: string;
+}
