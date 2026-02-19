@@ -36,7 +36,7 @@ export const resetPasswordSchema = z
 export type ResetPasswordSchema = z.infer<typeof resetPasswordSchema>;
 
 export const otpSchema = z.object({
-  otp: z.string().min(6),
+  otpCode: z.string().min(6),
 });
 
 export type OtpSchema = z.infer<typeof otpSchema>;

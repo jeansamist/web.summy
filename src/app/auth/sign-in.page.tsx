@@ -1,18 +1,36 @@
 import { Button } from "@/components/ui/button";
 import { InputField } from "@/components/ui/form-field";
 import { signInSchema, SignInSchema } from "@/schemas/auth.schemas";
+import { signIn } from "@/services/auth.services";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoaderCircle } from "lucide-react";
-import { Link, PageComponent } from "rasengan";
+import { Link, PageComponent, useNavigate } from "rasengan";
 import { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
+
 const SignInPage: PageComponent = () => {
+  const navigate = useNavigate();
   const form = useForm<SignInSchema>({
     resolver: zodResolver(signInSchema),
     mode: "onChange",
   });
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const onSubmit = async (data: SignInSchema) => {};
+  const onSubmit = async (data: SignInSchema) => {
+    setErrorMessage(null);
+    const response = await signIn(data);
+
+    if (!response.success) {
+      setErrorMessage(response.message);
+      return;
+    }
+
+    if (typeof window !== "undefined" && response.data?.accessToken) {
+      localStorage.setItem("AUTH_TOKEN", response.data.accessToken);
+    }
+
+    navigate("/");
+  };
+
   return (
     <main className="min-h-screen bg-accent flex items-center justify-center py-10 px-6">
       <div className="max-w-lg mx-auto w-full space-y-6">
@@ -57,9 +75,12 @@ const SignInPage: PageComponent = () => {
                     "hover:underline text-muted-foreground block text-sm text-right"
                   }
                 >
-                  I for got my password
+                  I forgot my password
                 </Link>
               </div>
+              {errorMessage && (
+                <p className="text-destructive text-sm">{errorMessage}</p>
+              )}
               <div className="flex gap-4 flex-col md:flex-row sm:items-center lg:gap-6">
                 <Button
                   size={"lg"}
