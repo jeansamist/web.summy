@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { InputField } from "@/components/ui/form-field";
-import { resetPasswordSchema, ResetPasswordSchema } from "@/schemas/auth.schemas";
+import {
+  resetPasswordSchema,
+  ResetPasswordSchema,
+} from "@/schemas/auth.schemas";
 import { resetPassword } from "@/services/auth.services";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoaderCircle } from "lucide-react";
@@ -41,14 +44,14 @@ const ResetPasswordPage: PageComponent = () => {
   };
 
   return (
-    <main className="min-h-screen bg-accent flex items-center justify-center py-10 px-6">
+    <main className="min-h-screen bg-accent flex items-center justify-center py-6 px-4 md:py-10 md:px-6">
       <div className="max-w-lg mx-auto w-full space-y-6">
         <div className="space-y-1">
           <h3 className="text-xl font-semibold md:text-2xl">Reset password</h3>
-          <p className="text-muted-foreground">
-            Set your new password for:
+          <p className="text-muted-foreground">Set your new password for:</p>
+          <p className="font-medium break-all">
+            {email || "No email provided"}
           </p>
-          <p className="font-medium break-all">{email || "No email provided"}</p>
         </div>
         <div>
           <FormProvider {...form}>

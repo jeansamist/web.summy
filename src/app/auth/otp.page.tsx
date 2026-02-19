@@ -39,7 +39,7 @@ const OtpPage: PageComponent = () => {
   };
 
   return (
-    <main className="min-h-screen bg-accent flex items-center justify-center py-10 px-6">
+    <main className="min-h-screen bg-accent flex items-center justify-center py-6 px-4 md:py-10 md:px-6">
       <div className="max-w-lg mx-auto w-full space-y-6">
         <div className="space-y-1">
           <h3 className="text-xl font-semibold md:text-2xl">
@@ -48,7 +48,9 @@ const OtpPage: PageComponent = () => {
           <p className="text-muted-foreground">
             Enter the 6-digit OTP sent to:
           </p>
-          <p className="font-medium break-all">{email || "No email provided"}</p>
+          <p className="font-medium break-all">
+            {email || "No email provided"}
+          </p>
         </div>
         <div>
           <FormProvider {...form}>
